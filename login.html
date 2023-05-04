@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Poppins'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-slate-900 antialiased text-white bg-[url('public/background.png')] bg-cover bg-center bg-no-repeat">
+    <header class="z-10 fixed w-full h-fit bg-slate-900/80 backdrop-blue-sm">
+        <div class="flex justify-between w-5/6 mx-auto items-center">
+            <img class="w-8 h-8 object-contain" src="public/logo-icon.svg">
+            <nav>
+                <ul class="flex font-medium ">
+                    <li class="p-5 "><a class="text-white/80 transition-all hover:text-white"
+                            href="/movies.html">Movies</a></li>
+                    <li class="p-5 "><a class="text-white/80 transition-all hover:text-white" href="/shows.html">TV
+                            Shows</a>
+                    </li>
+                    <li class="p-5 "><a class="text-white/80 transition-all hover:text-white"
+                            href="/suggest.html">Suggest me</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class=" w-5/6 mx-auto pt-44 flex">
+        <img class="w-2/3 max-w-md" src="public/login-image.png" alt="">
+        <div class="mt-20 h-fit w-12/12">
+            <h1 class="text-5xl">Login</h1>
+            <input
+                class="mb-4 bg-[url('public/email.svg')] bg-[left_12px_top_1rem] pl-[48px] bg-no-repeat block mt-4 bg-black/30  w-96 h-14 rounded-xl border border-white/30"
+                type="text" placeholder="Usuario" name="name" id="">
+            <div class="flex">
+                <input
+                    class="bg-black/30 w-96 h-14 rounded-xl border border-white/30 bg-[url('public/pass.svg')] bg-[left_12px_top_1rem] pl-[48px] bg-no-repeat"
+                    type="password" name="pass" id="pass"><button class=" -ml-12"><img class="" src="public/eye.svg"
+                        alt=""></button>
+            </div>
+            <button class=" block w-96 h-12 mt-4 rounded bg-indigo-600 hover:bg-indigo-800">Login</button>
+        </div>
+    </main>
+</body>
+
+</html>
