@@ -2,6 +2,8 @@ const PELIS = document.getElementById("pelis");
 const API_KEY = "83cb9c026dde68a0aec376592645f8c8";
 const TV_API_URL = "https://api.themoviedb.org/3/tv/popular?api_key=" + API_KEY + "&language=es-ES&page=1";
 const MOVIES_API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=" + API_KEY + "&language=es-ES&page=1";
+const PASS_BTN = document.getElementById("pass");
+const PASS_INP = document.getElementById("passinput");
 
 const MOVIE_IMG = "https://image.tmdb.org/t/p/original"
 fetch(TV_API_URL)
@@ -49,3 +51,10 @@ fetch(TV_API_URL)
     })
     .catch(error => console.error(error));
 
+PASS_BTN.addEventListener("click", function (e) {
+    if (PASS_INP.getAttribute("type") === "password") {
+        PASS_INP.setAttribute("type", "text");
+    } else {
+        PASS_INP.setAttribute("type", "password");
+    }
+});
