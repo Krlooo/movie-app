@@ -10,12 +10,13 @@ fetch(TV_API_URL)
     .then(response => response.json())
     .then(data => {
         for (pelis in data.results) {
-            console.log(data.results[pelis]);
             IMG = MOVIE_IMG + data.results[pelis].poster_path
             TITLE = data.results[pelis].title || data.results[pelis].name
             STAR = data.results[pelis].vote_average
+            ID = data.results[pelis].id
+            console.log()
             PELIS.innerHTML = PELIS.innerHTML + `
-            <article
+            <a href="/detail.html?id=${ID}"
                 class="border-2 relative border-transparent hover:border-2 hover:border-indigo-500 transition-all bg-gray-800/40 h-fit w-fit p-2 rounded-lg">
                 <div class="flex absolute top-4 left-4  w-fit bg-black/80 rounded-lg px-1 text-xs py-2 text-[#FFAD49]">
                     <img src="public/star.svg" alt="">
@@ -23,14 +24,13 @@ fetch(TV_API_URL)
                 </div>
                 <img src=${IMG}>
                 <h3 class="mt-4 mb-2 text-sm">${TITLE}</h3>
-            </article>
+            </a>
             `
         }
         fetch(MOVIES_API_URL)
             .then(response => response.json())
             .then(data => {
                 for (pelis in data.results) {
-                    console.log(data.results[pelis]);
                     IMG = MOVIE_IMG + data.results[pelis].poster_path
                     TITLE = data.results[pelis].title || data.results[pelis].name
                     STAR = data.results[pelis].vote_average
